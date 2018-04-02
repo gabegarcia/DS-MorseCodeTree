@@ -2,6 +2,7 @@
 ## HW #8 for CS113 - Morse Code translator + extending Binary Tree
 
 >![morse code table A-Z](http://cache3.asset-cache.net/xt/501817992.jpg?v=1&g=fs1|0|SKP232|17|992&s=1&b=Njkz)
+
 > Morse code was invented by Samuel Morse in 1832. Letters and numbers are represented by a series of dots and dashes - a dash sound lasts three times longer than a dot sound.
 
 
