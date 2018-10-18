@@ -1,23 +1,35 @@
 # CS113-HW08-MorseCodeTree
 ## HW #8 for CS113 - Morse Code translator + extending Binary Tree
 
->![morse code table A-Z](http://cache3.asset-cache.net/xt/501817992.jpg?v=1&g=fs1|0|SKP232|17|992&s=1&b=Njkz)
+**[//Insert Build Status Image//]**
+
+**International Morse Code, A-Z**
+
+| Letter A-G | Code | Letter H-N | Code | Letter O-U | Code | Letter V-Z | Code |
+|---|---|---|---|---|---|---|---|
+| A | • − | H | • • • • | O | − − − | V | • • • −	 |
+| B | − • • • | I | • • | P | • − − • | W | • − − |
+| C | − • − • | J | • − − − | Q | − − • − | X | − • • − |
+| D | − • • | K | − • − | R | • − • | Y | − • − − |
+| E | • | L | • − • • | S | • • • | Z | − − • • |
+| F |• • − • | M | − − | T | − |
+| G | − − • | N | − • | U | • • − |
 
 > Morse code was invented by Samuel Morse in 1832. Letters and numbers are represented by a series of dots and dashes - a dash sound lasts three times longer than a dot sound.
 
 
 ## Morse Code Translator:
-Morse code is a common code that is used to encode messages consisting of letters and digits (this project only handles letters).  Each letter consists of a series of dots (using asterisks for ease of us here) and dashes; for example, the code for the letter ***a*** is `*-` and the code for the letter ***b*** is `-***`.
+Morse code is a common code that is used to encode messages consisting of letters and digits (this project only handles letters). Each letter consists of a series of dots (using asterisks for ease of use here) and dashes; for example, the code for the letter ***a*** is `*-` and the code for the letter ***b*** is `-***`.
 
- - Store each letter of the alphabet in a node of a binary tree of height 5.  The root node is at level 1 and stores no letter. The left node at level 2 stores the letter ***e*** (code is `*`), and the right node stores letter ***t*** (code is `-`).  The 4 nodes at level 3, from left-to-right, store the letters with codes (`**`, `*-`, `-*`, `--`).  If your tree is visualized, it would look like:
+ - Store each letter of the alphabet in a node of a binary tree of height 5. The root node is at level 1 and stores no letter. The left node at level 2 stores the letter ***e*** (code is `*`), and the right node stores letter ***t*** (code is `-`).  The 4 nodes at level 3, from left-to-right, store the letters with codes (`**`, `*-`, `-*`, `--`).  If your tree is visualized, it would look like:
 ![morse code tree of A-Z letters](https://i.imgur.com/v8Lr6Nl.png)
  - To build the tree above, read a text file in which **each line consists of a letter followed by its code** (i.e., `b -***`) and add the node appropriately to the tree using the morse code. The letters should be ordered by tree level, from left-to-right (i.e., e, t, i, a, n, m, etc. where each letter is on its own line with the code as described previously).
  - To find the position to add for a letter in the tree, use the code and branch left for a dot 
  (`*`) and branch right for a dash (`-`).
- - To decode the message using the `MorseCodeTree`, translate each letter using the tree (branch left for a dot, branch right for a dash).  Make sure you use a space (` `) as a delimiter  between coded letters (i.e., `**** * *-** *-** --- *-- --- *-* *-** -**`  translates to `helloworld`)
+ - To decode the message using the `MorseCodeTree`, translate each letter using the tree (branch left for a dot, branch right for a dash). Make sure you use a space (` `) as a delimiter between coded letters (i.e., `**** * *-** *-** --- *-- --- *-* *-** -**`  translates to `helloworld`)
 
 ## Implementation Notes:
-- You will need to complete the generic implementation of the `BinaryTree` data structure first (see slides).  Once it is tested and complete, proceed to solve the problem above.
+- You will need to complete the generic implementation of the `BinaryTree` data structure first (see slides). Once it is tested and complete, proceed to solve the problem above.
 - Build the text file EXACTLY as specified above (if not, it becomes much more difficult and will break code that follows)
 - Create a `MorseCodeTree` that extends `BinaryTree`, adding methods that specifically do the translation/reading described above.
 	- Note: Do not override `readBinaryTree()` method, as that works completely differently! Instead, create a `readMorseCodeTree()` method (it is simpler, doesn't need to be recursive as you can see from the description above)
