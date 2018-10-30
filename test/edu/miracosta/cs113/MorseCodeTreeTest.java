@@ -2,12 +2,16 @@ package edu.miracosta.cs113;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 /**
  * MorseCodeTreeTest : Tester class for MorseCodeTree, specifically for its translateFromMorseCode method and
  * related exceptional input cases.
+ *
+ * @author King
+ * @version 1.0
  */
 public class MorseCodeTreeTest {
 
@@ -53,8 +57,8 @@ public class MorseCodeTreeTest {
                                                 "*- -*** -**---",
                                                 "-.-. ... -.. .--",
                                                 "_*_* *** _** *__",
-                                                "*- invalid characters",
-                                                "should prompt an Exception"};
+                                                "*- invalid characters *-",
+                                                "should be handled accordingly"};
 
     /** Your MorseCodeTree object containing the method translateFromMorseCode(String). */
     private MorseCodeTree mct;
@@ -66,19 +70,19 @@ public class MorseCodeTreeTest {
     }
 
     /**
-     * Helper function compares an array of morse code entries with a parallel array of its corresponding English
+     * Helper method compares an array of morse code entries with a parallel array of its corresponding English
      * letter translation.
      *
      * @param morseCode The array of morse code values, using '*' for dots and '-' for dashes and is delimited
      *                  from each letter with a space.
      * @param decodedValue The array of English letter values expected after translating the values in
-     *                             morseCode at the same indices.
+     *                     morseCode at the same indices.
      */
-    public void compareDecodedValues(String[] morseCode, String[] decodedValue) {
+    private void compareDecodedValues(String[] morseCode, String[] decodedValue) {
         try {
-            for (int i = 0; i < morseCode.length; i++) {
+            for (int i = 0; i < morseCode.length; i ++) {
                 String actualDecodedValue = mct.translateFromMorseCode(morseCode[i]);
-                assertEquals("Failure at array index " + i, decodedValue[i], actualDecodedValue);
+                assertEquals("Failure for case " + i, decodedValue[i], actualDecodedValue);
             }
         }
         catch (Exception e) { fail("Test failed - an Exception was thrown."); }
@@ -99,7 +103,7 @@ public class MorseCodeTreeTest {
         for (String errorCode : ERROR_CODE) {
             try {
                 mct.translateFromMorseCode(errorCode);
-                fail("Test failed - \"" + errorCode + "\" should prompt an Exception to be thrown.");
+                fail("Test failed - \"" + errorCode + "\" should prompt an Exception.");
             }
             catch (Exception e) { /* Test passed. */ }
         }
