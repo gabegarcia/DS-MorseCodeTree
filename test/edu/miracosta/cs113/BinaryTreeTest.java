@@ -12,6 +12,9 @@ import java.util.Scanner;
 /**
  * BinaryTreeTest : Tester class for generic BinaryTree class implementation which employs a pre-order traversal
  * through a given instance of this structure's elements to illustrate its data.
+ *
+ * @author King
+ * @version 1.0
  */
 public class BinaryTreeTest {
 
@@ -20,9 +23,13 @@ public class BinaryTreeTest {
     /** Data to populate the BinaryTree object. */
     private static final char[] CHAR_INPUT = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' };
 
+    /** Data listed in pre-order traversal order to populate a degenerate BinaryTree. */
     private static final String DEGENERATE_INPUT = "A null B C null D null E null null null";
+    /** Data listed in pre-order traversal order to populate a perfect BinaryTree. */
     private static final String PERFECT_INPUT = "A B D null null E null null C F null null G null null";
+    /** Data listed in pre-order traversal order to populate a complete BinaryTree. */
     private static final String COMPLETE_INPUT = "A B D H null null I null null E J null null null C F null null G null null";
+    /** Data listed in pre-order traversal order to populate a full BinaryTree. */
     private static final String FULL_INPUT = "A B null null C D null null E null null";
 
     /** Expected value returned by an empty binary tree's toString. */
