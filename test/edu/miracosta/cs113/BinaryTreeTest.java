@@ -14,7 +14,7 @@ import java.util.Scanner;
  * through a given instance of this structure's elements to illustrate its data.
  *
  * @author King
- * @version 1.0
+ * @version 2.0
  */
 public class BinaryTreeTest {
 
@@ -24,46 +24,34 @@ public class BinaryTreeTest {
     private static final char[] CHAR_INPUT = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J' };
 
     /** Data listed in pre-order traversal order to populate a degenerate BinaryTree. */
-    private static final String DEGENERATE_INPUT = "A null B C null D null E null null null";
+    private static final String DEGENERATE_INPUT = "A \nnull \nB \nC \nnull \nD \nnull \nE \nnull \nnull \nnull";
     /** Data listed in pre-order traversal order to populate a perfect BinaryTree. */
-    private static final String PERFECT_INPUT = "A B D null null E null null C F null null G null null";
+    private static final String PERFECT_INPUT = "A \nB \nC \nnull \nnull \nD \nnull \nnull \nE \nF \nnull \nnull " +
+                                                "\nG \nnull \nnull";
     /** Data listed in pre-order traversal order to populate a complete BinaryTree. */
-    private static final String COMPLETE_INPUT = "A B D H null null I null null E J null null null C F null null G null null";
+    private static final String COMPLETE_INPUT = "A \nB \nC \nD \nnull \nnull \nE \nnull \nnull \nF \nG \nnull " +
+                                                    "\nnull \nnull \nH \nI \nnull \nnull \nJ \nnull \nnull";
     /** Data listed in pre-order traversal order to populate a full BinaryTree. */
-    private static final String FULL_INPUT = "A B null null C D null null E null null";
+    private static final String FULL_INPUT = "A \nB \nnull \nnull \nC \nD \nnull \nnull \nE \nnull \nnull";
 
     /** Expected value returned by an empty binary tree's toString. */
     private static final String EMPTY_TREE = "null\n";
 
     /** Expected value returned by a degenerate binary tree's toString. */
-    private static final String DEGENERATE_TREE = "A\n null\n  B\n   C\n    null\n     D\n      null\n       " +
-            "E\n        null\n         null\n          null\n           null\n           null\n          " +
-            "null\n         null\n        null\n       null\n      null\n     null\n    null\n   null\n  " +
-            "null\n null\n";
+    private static final String DEGENERATE_TREE = "A\n null\n B\n  C\n   null\n   D\n    null\n    E\n     " +
+                                                    "null\n     null\n  null\n";
 
     /** Expected value returned by a perfect binary tree's toString. */
-    private static final String PERFECT_TREE = "A\n B\n  D\n   null\n    null\n     E\n      null\n       " +
-            "null\n        C\n         F\n          null\n           null\n            G\n             " +
-            "null\n              null\n               null\n               null\n              null\n             " +
-            "null\n            null\n           null\n          null\n         null\n        null\n       " +
-            "null\n      null\n     null\n    null\n   null\n  null\n null\n";
+    private static final String PERFECT_TREE = "A\n B\n  C\n   null\n   null\n  D\n   null\n   null\n E\n  F\n   " +
+                                                "null\n   null\n  G\n   null\n   null\n";
 
     /** Expected value returned by a complete binary tree's toString. */
-    private static final String COMPLETE_TREE = "A\n B\n  D\n   H\n    null\n     null\n      I\n       " +
-            "null\n        null\n         E\n          J\n           null\n            null\n             " +
-            "null\n              C\n               F\n                null\n                 " +
-            "null\n                  G\n                   null\n                    null\n                     " +
-            "null\n                     null\n                    null\n                   " +
-            "null\n                  null\n                 null\n                null\n               " +
-            "null\n              null\n             null\n            null\n           null\n          " +
-            "null\n         null\n        null\n       null\n      null\n     null\n    null\n   null\n  " +
-            "null\n null\n";
+    private static final String COMPLETE_TREE = "A\n B\n  C\n   D\n    null\n    null\n   E\n    null\n    null\n  " +
+                        "F\n   G\n    null\n    null\n   null\n H\n  I\n   null\n   null\n  J\n   null\n   null\n";
 
     /** Expected value returned by a full binary tree's toString. */
-    private static final String FULL_TREE = "A\n B\n  null\n   null\n    C\n     D\n      null\n       " +
-            "null\n        E\n         null\n          null\n           null\n           null\n          " +
-            "null\n         null\n        null\n       null\n      null\n     null\n    null\n   null\n  " +
-            "null\n null\n";
+    private static final String FULL_TREE = "A\n B\n  null\n  null\n C\n  D\n   null\n   null\n  E\n   null\n   " +
+                                            "null\n";
 
     /** A BinaryTree to contain Node objects of type Character. */
     private BinaryTree<Character> charTree;
@@ -187,8 +175,8 @@ public class BinaryTreeTest {
         strTree = BinaryTree.readBinaryTree(new Scanner(DEGENERATE_INPUT));
 
         assert strTree != null;
-        assertEquals("Test toString failed - might there be an error within the preOrderTraverse or " +
-                "readBinaryTree functions?", DEGENERATE_TREE, strTree.toString());
+        assertEquals("Test toString failed - might there be an error within the " +
+                "readBinaryTree method?", DEGENERATE_TREE, strTree.toString());
     }
 
     @Test
@@ -197,8 +185,8 @@ public class BinaryTreeTest {
         strTree = BinaryTree.readBinaryTree(new Scanner(PERFECT_INPUT));
 
         assert strTree != null;
-        assertEquals("Test toString failed - might there be an error within the preOrderTraverse or " +
-                "readBinaryTree functions?", PERFECT_TREE, strTree.toString());
+        assertEquals("Test toString failed - might there be an error within the " +
+                "readBinaryTree method?", PERFECT_TREE, strTree.toString());
     }
 
     @Test
@@ -207,8 +195,8 @@ public class BinaryTreeTest {
         strTree = BinaryTree.readBinaryTree(new Scanner(COMPLETE_INPUT));
 
         assert strTree != null;
-        assertEquals("Test toString failed - might there be an error within the preOrderTraverse or " +
-                "readBinaryTree functions?", COMPLETE_TREE, strTree.toString());
+        assertEquals("Test toString failed - might there be an error within the " +
+                "readBinaryTree method?", COMPLETE_TREE, strTree.toString());
     }
 
     @Test
@@ -217,8 +205,8 @@ public class BinaryTreeTest {
         strTree = BinaryTree.readBinaryTree(new Scanner(FULL_INPUT));
 
         assert strTree != null;
-        assertEquals("Test toString failed - might there be an error within the preOrderTraverse or " +
-                "readBinaryTree functions?", FULL_TREE, strTree.toString());
+        assertEquals("Test toString failed - might there be an error within the " +
+                "readBinaryTree method?", FULL_TREE, strTree.toString());
     }
 
     // endregion toString, preOrderTraverse, and readBinaryTree tests
