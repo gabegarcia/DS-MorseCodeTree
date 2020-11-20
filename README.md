@@ -1,5 +1,5 @@
-# CS113-HW07-MorseCodeTree
-## HW #7 for CS113 - Morse Code translator + extending Binary Tree
+# MorseCodeTree
+## Morse Code translator + extending Binary Tree
 
 **[//Insert Build Status Image//]**
 
