@@ -20,13 +20,13 @@ public class BinaryTree<E> implements Serializable{
 			return data.toString();
 		}
 		public Node<E> getLeft(){
-			return this;
+			return left;
 		}
 		public Node<E> getRight(){
-			return this;
+			return right;
 		}
 		public E getData() {
-			return this.data;
+			return data;
 		}
 		public void setRight(Node<E> node) {}
 		public void setLeft(Node<E> node) {}
@@ -80,6 +80,7 @@ public class BinaryTree<E> implements Serializable{
 	public boolean isLeaf() {
 		if (root == null) {
 			throw new NullPointerException();
+			
 		} else
 		return (root.left == null && root.right == null);
 	}
@@ -122,13 +123,7 @@ public class BinaryTree<E> implements Serializable{
 		return this.root.data;
 	}
 	
-	public void addLeft(E data) {
-		root.left = new Node<E>(data);
-	}
 	
-	public void addRight(E data) {
-		root.right = new Node<E>(data);
-	}
 	
 	
 }

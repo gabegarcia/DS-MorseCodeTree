@@ -67,6 +67,7 @@ public class MorseCodeTreeTest {
     @Before
     public void setUp() {
         mct = new MorseCodeTree();
+        
     }
 
     /**
