@@ -203,6 +203,7 @@ public class MorseCodeTree extends BinaryTree<Character> {
     }
 
 
+    
     public String translateFromMorseCode(String morseCode)
     {
         //check to see if appropriate characters are used.
